@@ -5,6 +5,6 @@ Members:
 - 2
 - Liljana
 - 4
-- 5
+- Veronica
 
 This is our team project for string and arrays.
