@@ -1,9 +1,9 @@
-# G4collaboration
+# G4collabration
 
 Members:
 - 1
 - 2
-- 3 Liljana
+- 3
 - 4
 - 5
 
