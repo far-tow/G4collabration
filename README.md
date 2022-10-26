@@ -1,10 +1,11 @@
-# G4collabration
+#Collabration Project Group4
+  
+Nive
 
-Members:
-- Samuel
-- 2
-- Liljana
-- Farhad
-- Veronica
+Lilly
 
-This is our team project for string and arrays.
+Sam
+
+farhad
+
+veronica
