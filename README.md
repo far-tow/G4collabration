@@ -1,7 +1,7 @@
 # G4collabration
 
 Members:
-- 1
+- Samuel
 - 2
 - 3
 - Farhad
