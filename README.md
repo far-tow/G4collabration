@@ -2,7 +2,7 @@
 
 Members:
 - Samuel
-- 2
+- Nivethitha
 - Liljana
 - Farhad
 - Veronica
