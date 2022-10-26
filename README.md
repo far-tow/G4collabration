@@ -3,7 +3,7 @@
 Members:
 - 1
 - 2
-- 3
+- Liljana
 - 4
 - 5
 
