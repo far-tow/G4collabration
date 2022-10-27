@@ -24,12 +24,26 @@ public class NameRepository {
     private static String names[] = new String[0];
 
     public static int getSize() {
-
-    } //Should have a Return!
+        // System.out.println(names.length);
+        int len = names.length;
+        return len;
+    }
 
     public static void setNames(String[] names) {
+        String[] addNames = {"Samuel Svahn", "Nivethitha Jothikumar", "Liljana Ristevska",
+                "Farhad Towfighian", "Veronica Okoli"};
+        names = arrayConcat(names, addNames);
 
     }
+
+    public static String[] arrayConcat(String[] source, String[] elementsToAdd) {
+        String[] combined = Arrays.copyOf(source, source.length + elementsToAdd.length);
+        for (int i = source.length, j = 0; i < combined.length; i++, j++) {
+            combined[i] = elementsToAdd[j];
+        }
+        return combined;
+    }
+
 
     public static void clear() {
         names = new String[0];
@@ -73,7 +87,7 @@ public class NameRepository {
                 }
 
             }
-            public static String findByLastName(final String lastName) {
+            public static String findByLastName ( final String lastName){
 
                 String splitNames[];
                 for (String na : names) {
@@ -95,54 +109,54 @@ public class NameRepository {
     Searches the array trying to find all names that has passed in first name.
     Returns a String array containing all matches.
     SUGGESTIONS:  */
-        public static String[] findByFirstname ( final String firstName){
-            String splitNames[];
-            for (String na : names) {
-                splitNames = na.split(" ");
-                if (splitNames.length >= 2 && splitNames[0].equalsIgnoreCase(firstname)) {
-                    System.out.println("First name is: " + firstname);
-                    return "Full name is: " + na;
+            public static String[] findByFirstname ( final String firstName){
+                String splitNames[];
+                for (String na : names) {
+                    splitNames = na.split(" ");
+                    if (splitNames.length >= 2 && splitNames[0].equalsIgnoreCase(firstname)) {
+                        System.out.println("First name is: " + firstname);
+                        return "Full name is: " + na;
+                    }
                 }
-            }
-            return "NAME NOT FOUND";
+                return "NAME NOT FOUND";
 
-        } //Should have a Return!
+            } //Should have a Return!
 
-    }
+        }
 
     /* Samuel
     public static boolean remove(final String fullName)
     Should remove a name from the array. Returns true if name was removed and false if the name was not
     removed for some reason.
     SUGGESTIONS:  */
-    public static boolean remove(final String fullName) {
-        String[] names = {"Nive", "Farhad", "Lilly", "Sam", "Veronica"};
-        boolean flag = false;
-        int index = 0;
-        for (int i = 0; i < names.length; i++) {
-            if (fullName.equals(names[i])) {
+        public static boolean remove ( final String fullName){
+            String[] names = {"Nive", "Farhad", "Lilly", "Sam", "Veronica"};
+            boolean flag = false;
+            int index = 0;
+            for (int i = 0; i < names.length; i++) {
+                if (fullName.equals(names[i])) {
 
-                flag = true;
-                index = i;
+                    flag = true;
+                    index = i;
+                }
             }
-        }
-        if (flag) {
+            if (flag) {
 
-            names[index] = " ";
-            System.out.println("Name removed");
-        }
-        for (String na : names) {
-            if (na.equals(" ")) {
-                continue;
+                names[index] = " ";
+                System.out.println("Name removed");
             }
-            System.out.println(na);
+            for (String na : names) {
+                if (na.equals(" ")) {
+                    continue;
+                }
+                System.out.println(na);
+            }
+
+            return true;
+
         }
 
-        return true;
 
     }
-
-
-}
 
 
