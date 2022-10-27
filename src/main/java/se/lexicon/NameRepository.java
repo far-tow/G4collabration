@@ -108,7 +108,7 @@ public class NameRepository {
     }
 
 
-    public static String findByFirstname(final String firstName) {
+    public static String [] findByFirstname(final String firstName) {
         String splitNames[];
         for (String na : names) {
             splitNames = na.split(" ");
@@ -116,11 +116,9 @@ public class NameRepository {
                 System.out.println("First name is: " + firstName);
                 System.out.println("and full name is: " + na);
                 // return "Full name is: " + na;
-
             }
         }
-        return "NAME NOT FOUND";
-
+        return new String[]{"NAME NOT FOUND"};
     }
 
 
