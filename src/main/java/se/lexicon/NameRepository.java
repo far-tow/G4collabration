@@ -73,7 +73,6 @@ public class NameRepository {
     Returns true when name was added and false when the array contains the name.
     SUGGESTIONS:  */
 
-
         public static boolean add ( final String fullName){
             String[] names;
             String newArray[] = Arrays.copyOf(names, names.length + 1);
@@ -99,10 +98,6 @@ public class NameRepository {
                 }
                 return "NAME NOT FOUND";
             }
-
-
-
-
 
     /* Farhad
     public static String[] findByFirstName(final String firstName)
