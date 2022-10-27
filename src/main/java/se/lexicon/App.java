@@ -4,11 +4,9 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static se.lexicon.NameRepository.names;
 
-/**
- * Hello world!
- */
+
+
 public class App {
     public static void main(String[] args) {
 
