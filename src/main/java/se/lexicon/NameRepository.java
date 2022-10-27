@@ -29,6 +29,20 @@ public class NameRepository {
     public static void clear()
     Should completely empty the array.
     SUGGESTIONS: V:String[0] will works! S: yes it works   */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public static void clear() {
         names = new String[0];
     }
@@ -46,6 +60,10 @@ public class NameRepository {
     Returns name if found and null if not found.
     SUGGESTIONS:  */
     public static String find(final String fullName) {
+        for (String na : names){
+            if (fullName.equalsIgnoreCase(na))
+                return na;}
+        return "Name not found";
 
     } //Should have a Return!
 
@@ -56,6 +74,39 @@ public class NameRepository {
     SUGGESTIONS:  */
     public static boolean add(final String fullName) {
 
+
+        public static String[] findByFirstName ( final String firstName){
+
+
+        }
+        public static String[] findByLastName (final String LastName){
+
+
+        }
+
+
+        public static boolean update(final String original,final String updatedName){
+            int index = 0;
+            boolean flag = false;
+            for (int i = 0; i < names.length; i++) {
+                if (names[i].equals(updatedName)) {
+                    index = i;
+                    flag = true;
+                }
+            }
+            if (!flag) {
+
+                names = Arrays.copyOf(names, names.length + 1);
+                names[names.length - 1] = updatedName;
+                System.out.println("Updated array");
+                System.out.println(Arrays.toString(names));
+            }
+
+
+            return false;
+        }
+
+
     } //Should have a Return!
 
     /* Farhad
@@ -63,6 +114,22 @@ public class NameRepository {
     Searches the array trying to find all names that has passed in first name.
     Returns a String array containing all matches.
     SUGGESTIONS:  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public static String[] findByFirstname(final String firstName) {
         String splitNames[];
         for (String na : names) {
