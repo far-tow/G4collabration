@@ -24,12 +24,13 @@ public class NameRepository {
     private static String names[] = new String[0];
 
     public static int getSize() {
-        // System.out.println(names.length);
+
         int len = names.length;
         return len;
     }
 
-    public static void setNames(String[] names) {
+    public static void setNames(String[] names) {   /* NameRepository.names=Arrays.copyOf(names,names.length);
+        System.out.println("Array with new names:"+NameRepository.names);*/
         String[] addNames = {"Samuel Svahn", "Nivethitha Jothikumar", "Liljana Ristevska",
                 "Farhad Towfighian", "Veronica Okoli"};
         names = arrayConcat(names, addNames);
@@ -50,108 +51,126 @@ public class NameRepository {
     }
 
     public static String[] findAll() {
-        String[] names = {"Samuel Svahn", "Nivethitha Jothikumar", "Liljana Ristevska", "Farhad Towfighian", "Veronica Okoli"};
+        // String[] names = {"Samuel Svahn", "Nivethitha Jothikumar",
+        // "Liljana Ristevska", "Farhad Towfighian", "Veronica Okoli"};
         // Arrays.sort(names, String.CASE_INSENSITIVE_ORDER);
         // System.out.println(Arrays.toString(names));
         String[] result = Arrays.copyOf(names, names.length);
 
         return result;
+    }
 
-
-        public static String find ( final String fullName){
-            for (String na : names) {
-                if (fullName.equalsIgnoreCase(na))
-                    return na;
-            }
-            return "Name not found";
-
+    public static String find(final String fullName) {
+        for (String na : names) {
+            if (fullName.equalsIgnoreCase(na))
+                return na;
         }
-
-    /* Lilly
-    public static boolean add(final String fullName)
-    Should add a new name to the array.
-    Returns true when name was added and false when the array contains the name.
-    SUGGESTIONS:  */
-
-        public static boolean add ( final String fullName){
-            String[] names;
-            String newArray[] = Arrays.copyOf(names, names.length + 1);
-            names = new String[];
-            // addNameToArray(names," ");
-            boolean flag = true;
-            for (String name : names) {
-                if (name.equals(fullName)) {
-                    flag = false;
-                    System.out.println("Name found cannot add");
-                }
-
-            }
-            public static String findByLastName ( final String lastName){
-
-                String splitNames[];
-                for (String na : names) {
-                    splitNames = na.split(" ");
-                    if (splitNames.length >= 2 && splitNames[1].equalsIgnoreCase(lastName)) {
-                        System.out.println("Full Name: " + na);
-                        return na;
-                    }
-                }
-                return "NAME NOT FOUND";
-            }
-
-    /* Farhad
-    public static String[] findByFirstName(final String firstName)
-    Searches the array trying to find all names that has passed in first name.
-    Returns a String array containing all matches.
-    SUGGESTIONS:  */
-            public static String[] findByFirstname ( final String firstName){
-                String splitNames[];
-                for (String na : names) {
-                    splitNames = na.split(" ");
-                    if (splitNames.length >= 2 && splitNames[0].equalsIgnoreCase(firstname)) {
-                        System.out.println("First name is: " + firstname);
-                        return "Full name is: " + na;
-                    }
-                }
-                return "NAME NOT FOUND";
-
-            } //Should have a Return!
-
-        }
-
-    /* Samuel
-    public static boolean remove(final String fullName)
-    Should remove a name from the array. Returns true if name was removed and false if the name was not
-    removed for some reason.
-    SUGGESTIONS:  */
-        public static boolean remove ( final String fullName){
-            String[] names = {"Nive", "Farhad", "Lilly", "Sam", "Veronica"};
-            boolean flag = false;
-            int index = 0;
-            for (int i = 0; i < names.length; i++) {
-                if (fullName.equals(names[i])) {
-
-                    flag = true;
-                    index = i;
-                }
-            }
-            if (flag) {
-
-                names[index] = " ";
-                System.out.println("Name removed");
-            }
-            for (String na : names) {
-                if (na.equals(" ")) {
-                    continue;
-                }
-                System.out.println(na);
-            }
-
-            return true;
-
-        }
-
+        return "Name not found";
 
     }
+
+
+    public static boolean add(final String fullName) {
+
+
+        boolean flag = true;
+
+        for (String name : names) {
+            if (name.equals(fullName)) {
+                flag = false;
+                System.out.println("Name found cannot add");
+            }
+
+        }
+
+        if (flag) {
+            String newArray[] = Arrays.copyOf(names, names.length + 1);
+            newArray[newArray.length - 1] = fullName;
+            System.out.println(Arrays.toString(newArray));
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public static String findByLastName(final String lastName) {
+
+        String splitNames[];
+        for (String na : names) {
+            splitNames = na.split(" ");
+            if (splitNames.length >= 2 && splitNames[1].equalsIgnoreCase(lastName)) {
+                System.out.println("Full Name: " + na);
+                return na;
+            }
+        }
+        return "NAME NOT FOUND";
+    }
+
+
+    public static String findByFirstname(final String firstName) {
+        String splitNames[];
+        for (String na : names) {
+            splitNames = na.split(" ");
+            if (splitNames.length >= 2 && splitNames[0].equalsIgnoreCase(firstName)) {
+                System.out.println("First name is: " + firstName);
+                return "Full name is: " + na;
+            }
+        }
+        return "NAME NOT FOUND";
+
+    }
+
+
+    public static boolean remove(final String fullName) {
+        String[] names = {"Nive", "Farhad", "Lilly", "Sam", "Veronica"};
+        boolean flag = false;
+        int index = 0;
+        for (int i = 0; i < names.length; i++) {
+            if (fullName.equals(names[i])) {
+
+                flag = true;
+                index = i;
+            }
+        }
+        if (flag) {
+
+            names[index] = " ";
+            System.out.println("Name removed");
+        }
+        for (String na : names) {
+            if (na.equals(" ")) {
+                continue;
+            }
+            System.out.println(na);
+        }
+
+        return true;
+
+    }
+
+    public static boolean update(final String original, final String updatedName) {
+        int index = 0;
+        boolean flag = false;
+        for (int i = 0; i < names.length; i++) {
+            if (names[i].equals(updatedName)) {
+                index = i;
+                flag = true;
+            }
+        }
+        if (!flag) {
+
+            names = Arrays.copyOf(names, names.length + 1);
+            names[names.length - 1] = updatedName;
+            System.out.println("Updated array");
+            System.out.println(Arrays.toString(names));
+        }
+
+
+        return false;
+    }
+
+
+}
 
 
