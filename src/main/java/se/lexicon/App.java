@@ -4,9 +4,11 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import static se.lexicon.NameRepository.names;
 
-
-
+/**
+ * Hello world!
+ */
 public class App {
     public static void main(String[] args) {
 
@@ -14,7 +16,7 @@ public class App {
             printMenu();
             switch (getInputNumber()) {
                 case 1:
-                   int len= NameRepository.getSize();
+                    int len= NameRepository.getSize();
                     System.out.println("len = " + len);
                     break;
                 case 2:
@@ -54,9 +56,28 @@ public class App {
                     break;
             }
 
-    // Samuel is here
 
-    // :D Hi from Lilly <3
+        } // while
 
+
+    } // main
+
+
+    public static void printMenu() {
+        System.out.println("##### Group collabration workshop #####");
+        System.out.print("\tOption (1-10): ");
+    }
+
+    public static int getInputNumber() {
+        Scanner scanner = new Scanner(System.in);
+        int number = 0;
+        try {
+            number = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("\t\tenter a valid number between 1-10");
+        }
+
+        return number;
+    }
 }
 
