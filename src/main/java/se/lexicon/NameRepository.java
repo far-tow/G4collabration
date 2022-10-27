@@ -1,105 +1,144 @@
 package se.lexicon;
 
 
-import java.sql.SQLOutput;
-import java.util.Arrays;
 
-/**
- * public static void clear(),
- * public static String[] findByFirstName(final String firstName)   for farhad
- * <p>
- * <p>
- * public static String[] findAll(), public static boolean add(final String fullName) ; lilly
- * <p>
- * <p>
- * findByLastName,  boolean remove(final String fullName) ; sam
- * <p>
- * <p>
- * find full name(),    update(); Nivethitha
- **/
-public class NameRepository {
+  /**
+   public static void clear(), public static String[] findByFirstName(final String firstName)   for farhad
 
 
-    static String[] names = {"Erik svensson", "Nivethitha Jayanth", "Anika ananya", "Jayanth solai"};
+   public static String[] findAll(), public static boolean add(final String fullName) ; lilly
 
+
+   -findByLastName,  boolean remove(final String fullName) ; sam
+
+
+    find full name,    update; Nivethitha
+
+**/
+   public class NameRepository {
+
+
+    /* Veronica
+    Inside NameRepository create a private static empty array of String called names.
+    SUGGESTIONS:  */
+    private static String names[] = new String[]{};
+
+    /* Veronica
+    public static int getSize()
+    Returns number of elements in the array
+    SUGGESTIONS: */
     public static int getSize() {
-        int length=names.length;
-        return length;
-    }
-    public static void setNames(String[] names){
 
-        NameRepository.names=Arrays.copyOf(names,names.length);
-        System.out.println("Array with new names:"+NameRepository.names);
+    } //Should have a Return!
 
-
-
-    }
-    public static void clear(){
-
-        //int arrLen=getSize();
-        String[] names= new String[0];
-    }
-    public static String[] findAll(){
-
-        String[] NewArray=Arrays.copyOf(names,names.length);
-        System.out.println("Names in new array:"+Arrays.toString(NewArray));
-        return NewArray;
+    /* Who?
+    public static void setNames(String[] names)
+    Sends in an array that set the private static array.
+    This should replace all existing names.
+    SUGGESTIONS:  */
+    public static void setNames(String[] names) {
 
     }
-    public static boolean add(final String fullName){
 
-        String newArray[] = Arrays.copyOf(names, names.length + 1);
+    /*Farhad
+    public static void clear()
+    Should completely empty the array.
+    SUGGESTIONS: V:String[0] will works! S: yes it works   */
+    public static void clear() {
+    } //Should have a Return!
 
-
-        boolean flag = false;
-        for (String name : names) {
-            if (!name.equals(fullName)){
-                flag=true;
-            }}
-           if (flag){
-
-               newArray[newArray.length-1]=fullName;
-               return true;
-
-           } return false;
-    }
-
-
-
-    public static void remove(final String fullName){
-
-        boolean flag = false;
-        int index=0;
-        for (int i = 0; i < names.length; i++) {
-            if (fullName.equals(names[i])) {
-
-                flag = true;
-                index = i;
-            }
-        }
-        if (flag) {
-
-            names[index]=" ";
-            System.out.println("Name removed");
-        }
-        for(String na:names){
-            if(na.equals(" ")){
-                continue;
-            }
-            System.out.println(na);
-        }
-    }
-
-   
-
+    /* Nivethitha
+    public static String find(final String fullName)
+    Returns name if found and null if not found.
+    SUGGESTIONS:  */
     public static String find(final String fullName) {
 
+    } //Should have a Return!
+
+    /* Lilly
+    public static boolean add(final String fullName)
+    Should add a new name to the array.
+    Returns true when name was added and false when the array contains the name.
+    SUGGESTIONS:  */
+    public static boolean add(final String fullName) {
+
+    /* Farhad
+    public static String[] findByFirstName(final String firstName)
+    Searches the array trying to find all names that has passed in first name.
+    Returns a String array containing all matches.
+    SUGGESTIONS:  */
+    public static String[] findByFirstname(final String firstName) {
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       public static String find(final String fullName) {
+    } //Should have a Return!
+
+    /* Samuel
+    public static String[] findByLastName(final String lastName)
+    Searches the array trying to find all names that has passed in last name.
+    Returns a String array containing all matches.
+    SUGGESTIONS:  */
+    public static String[] findByLastName(final String lastName) {
 
         for (String na : names){
             if (fullName.equalsIgnoreCase(na))
                 return na;}
         return "Name not found";
     }
+    } //Should have a Return!
+
+    /* Nivethitha
+    public static boolean update(final String original, final String updatedName)
+    Should find a name and replace it with new fullName if available.
+    Returns true if name was found and updated with the new name.
+    False if name could not be updated because name wasn’t found or name was found
+    but an existing name matching the updatedName already exists.
+    SUGGESTIONS:  */
+    public static boolean update(final String original, final String updateName) {
+
+    } //Should have a Return!
+
+    /* Samuel
+    public static boolean remove(final String fullName)
+    Should remove a name from the array. Returns true if name was removed and false if the name was not
+    removed for some reason.
+    SUGGESTIONS:  */
+    public static boolean remove(final String fullName) {
+
+    } //Should have a Return!
+}
 
     public static String findByLastName(final String lastName) {
 
