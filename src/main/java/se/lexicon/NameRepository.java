@@ -6,7 +6,7 @@ public class NameRepository {
     /* Veronica
     Inside NameRepository create a private static empty array of String called names.
     SUGGESTIONS:  */
-    private static String names[] = new String[]{};
+    private static String names[] = new String[0];
 
     /* Veronica
     public static int getSize()
@@ -29,19 +29,6 @@ public class NameRepository {
     public static void clear()
     Should completely empty the array.
     SUGGESTIONS: V:String[0] will works! S: yes it works   */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public static void clear() {
         names = new String[0];
@@ -74,11 +61,7 @@ public class NameRepository {
     SUGGESTIONS:  */
     public static boolean add(final String fullName) {
 
-
-        public static String[] findByFirstName ( final String firstName){
-
-
-        }
+    }
         public static String[] findByLastName (final String LastName){
 
 
@@ -114,22 +97,6 @@ public class NameRepository {
     Searches the array trying to find all names that has passed in first name.
     Returns a String array containing all matches.
     SUGGESTIONS:  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public static String[] findByFirstname(final String firstName) {
         String splitNames[];
         for (String na : names) {
@@ -143,25 +110,9 @@ public class NameRepository {
 
     } //Should have a Return!
 
-    /* Samuel
-    public static String[] findByLastName(final String lastName)
-    Searches the array trying to find all names that has passed in last name.
-    Returns a String array containing all matches.
-    SUGGESTIONS:  */
-    public static String[] findByLastName(final String lastName) {
 
-    } //Should have a Return!
 
-    /* Nivethitha
-    public static boolean update(final String original, final String updatedName)
-    Should find a name and replace it with new fullName if available.
-    Returns true if name was found and updated with the new name.
-    False if name could not be updated because name wasn’t found or name was found
-    but an existing name matching the updatedName already exists.
-    SUGGESTIONS:  */
-    public static boolean update(final String original, final String updateName) {
 
-    } //Should have a Return!
 
     /* Samuel
     public static boolean remove(final String fullName)
