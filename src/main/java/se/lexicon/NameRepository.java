@@ -113,8 +113,9 @@ public class NameRepository {
         for (String na : names) {
             splitNames = na.split(" ");
             if (splitNames.length >= 2 && splitNames[0].equalsIgnoreCase(firstName)) {
-                System.out.println("First name is: " + na);
-                return "Full name is: " + na;
+                System.out.println("First name is: " + firstName);
+                System.out.println("and full name is: " + na);
+                // return "Full name is: " + na;
             }
         }
         return "NAME NOT FOUND";
