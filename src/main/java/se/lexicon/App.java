@@ -54,28 +54,9 @@ public class App {
                     break;
             }
 
+    // Samuel is here
 
-        } // while
+    // :D Hi from Lilly <3
 
-
-    } // main
-
-
-    public static void printMenu() {
-        System.out.println("##### Group collabration workshop #####");
-        System.out.print("\tOption (1-10): ");
-    }
-
-    public static int getInputNumber() {
-        Scanner scanner = new Scanner(System.in);
-        int number = 0;
-        try {
-            number = scanner.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println("\t\tenter a valid number between 1-10");
-        }
-
-        return number;
-    }
 }
 
