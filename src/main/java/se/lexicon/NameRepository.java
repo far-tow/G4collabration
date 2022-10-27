@@ -73,31 +73,22 @@ public class NameRepository {
                 }
 
             }
-            public static String[] findByLastName ( final String LastName){
+            public static String findByLastName(final String lastName) {
 
-
-            }
-            if (flag) {
-                String newArray[] = Arrays.copyOf(names, names.length + 1);
-                newArray[newArray.length - 1] = fullName;
-                System.out.println(Arrays.toString(newArray));
-
-
-                boolean ifNameExists = false;
-                for (String name : names) {
-                    if (!name.equals(fullName)) ;
-                    // ifNameExists = true;
+                String splitNames[];
+                for (String na : names) {
+                    splitNames = na.split(" ");
+                    if (splitNames.length >= 2 && splitNames[1].equalsIgnoreCase(lastName)) {
+                        System.out.println("Full Name: " + na);
+                        return na;
+                    }
                 }
-                if (ifNameExists == true) {
-                    return false;
-                } else {
-                    //newArray[names.length] = fullName;
-                    return true;
-                }
-
+                return "NAME NOT FOUND";
             }
 
-        } //Should have a Return!
+
+
+
 
     /* Farhad
     public static String[] findByFirstName(final String firstName)
@@ -125,10 +116,33 @@ public class NameRepository {
     removed for some reason.
     SUGGESTIONS:  */
     public static boolean remove(final String fullName) {
+        String[] names = {"Nive", "Farhad", "Lilly", "Sam", "Veronica"};
+        boolean flag = false;
+        int index = 0;
+        for (int i = 0; i < names.length; i++) {
+            if (fullName.equals(names[i])) {
+
+                flag = true;
+                index = i;
+            }
+        }
+        if (flag) {
+
+            names[index] = " ";
+            System.out.println("Name removed");
+        }
+        for (String na : names) {
+            if (na.equals(" ")) {
+                continue;
+            }
+            System.out.println(na);
+        }
+
+        return true;
+
+    }
 
 
-    } //Should have a Return!
 }
-
 
 
