@@ -21,76 +21,56 @@ public class NameRepository {
     private static String names[] = new String[0];
 
 
-    public static int getSize() {
+    public static String[] findAll() {
+        String[] names = {"Samuel Svahn", "Nivethitha Jothikumar", "Liljana Ristevska", "Farhad Towfighian", "Veronica Okoli"};
+        // Arrays.sort(names, String.CASE_INSENSITIVE_ORDER);
 
-    } //Should have a Return!
-
-
-    public static void setNames(String[] names) {
-
-    }
+        // System.out.println(Arrays.toString(names));
+        String[] result = Arrays.copyOf(names, names.length);
 
 
-    public static void clear() {
-    }
-
-    public static String[] findAll(){}
-
-    public static String find(final String fullName) {
-        for (String na : names){
-            if (fullName.equalsIgnoreCase(na))
-                return na;}
-        return "Name not found";
+        return result;
 
     }
+
 
     public static boolean add(final String fullName) {
-
-
-        public static String[] findByFirstName ( final String firstName){
-
-
-        }
-        public static String[] findByLastName (final String LastName){
-
-
-        }
-
-
-        public static boolean update(final String original,final String updatedName){
-            int index = 0;
-            boolean flag = false;
-            for (int i = 0; i < names.length; i++) {
-                if (names[i].equals(updatedName)) {
-                    index = i;
-                    flag = true;
-                }
+        String[] names;
+        String newArray[] = Arrays.copyOf(names, names.length + 1);
+        names = new String[];
+        // addNameToArray(names," ");
+        boolean flag = true;
+        for (String name : names) {
+            if (name.equals(fullName)) {
+                flag = false;
+                System.out.println("Name found cannot add");
             }
-            if (!flag) {
+        }
+        if (flag) {
+            String newArray[] = Arrays.copyOf(names, names.length + 1);
+            newArray[newArray.length - 1] = fullName;
+            System.out.println(Arrays.toString(newArray));
 
-                names = Arrays.copyOf(names, names.length + 1);
-                names[names.length - 1] = updatedName;
-                System.out.println("Updated array");
-                System.out.println(Arrays.toString(names));
+
+            boolean ifNameExists = false;
+            for (String name : names) {
+                if (!name.equals(fullName)) ;
+                // ifNameExists = true;
+            }
+            if (ifNameExists == true) {
+                return false;
+            } else {
+                //newArray[names.length] = fullName;
+                return true;
             }
 
-
-            return false;
         }
 
 
-    } //Should have a Return!
+    }
 
-
-
-    public static boolean remove(final String fullName) {
-
-    } //Should have a Return!
 
 }
 
 
-
-
-}
 
