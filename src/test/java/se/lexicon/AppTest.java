@@ -31,8 +31,12 @@ public class AppTest
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
+    public void testgetsize()
     {
-        assertTrue( true );
+        int ExpecSize=4;
+
+        int actualSize= NameRepository.getSize();
+         assertEquals(ExpecSize,actualSize);
+
     }
 }
