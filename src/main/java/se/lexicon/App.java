@@ -26,10 +26,12 @@ public class App {
                     NameRepository.clear();
                     break;
                 case 4:
-                    NameRepository.findAll();
+                    String [] Array1 = NameRepository.findAll();
+                    System.out.println("new array:" + Arrays.toString(Array1));
                     break;
                 case 5:
-                    NameRepository.find("Veronica Okoli");
+                    String Value= NameRepository.find("Veronica Okoli");
+                    System.out.println(Value);
                     break;
                 case 6:
                     NameRepository.add("Mehardad javan");

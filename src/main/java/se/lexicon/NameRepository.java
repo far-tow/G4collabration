@@ -31,9 +31,9 @@ public class NameRepository {
 
     public static void setNames(String[] names) {   /* NameRepository.names=Arrays.copyOf(names,names.length);
         System.out.println("Array with new names:"+NameRepository.names);*/
-        String[] addNames = {"Samuel Svahn", "Nivethitha Jothikumar", "Liljana Ristevska",
-                "Farhad Towfighian", "Veronica Okoli"};
-        names = arrayConcat(names, addNames);
+        /*String[] addNames = {"Samuel Svahn", "Nivethitha Jothikumar", "Liljana Ristevska",
+                "Farhad Towfighian", "Veronica Okoli"};*/
+        NameRepository.names = arrayConcat(NameRepository.names, names);
 
     }
 
@@ -113,7 +113,7 @@ public class NameRepository {
         for (String na : names) {
             splitNames = na.split(" ");
             if (splitNames.length >= 2 && splitNames[0].equalsIgnoreCase(firstName)) {
-                System.out.println("First name is: " + firstName);
+                System.out.println("First name is: " + na);
                 return "Full name is: " + na;
             }
         }
