@@ -30,7 +30,7 @@ public class NameRepository {
     Should completely empty the array.
     SUGGESTIONS: V:String[0] will works! S: yes it works   */
     public static void clear() {
-
+        names = new String[0];
     }
 
     /* Lilly
@@ -64,6 +64,15 @@ public class NameRepository {
     Returns a String array containing all matches.
     SUGGESTIONS:  */
     public static String[] findByFirstname(final String firstName) {
+        String splitNames[];
+        for (String na : names) {
+            splitNames = na.split(" ");
+            if (splitNames.length >= 2 && splitNames[0].equalsIgnoreCase(firstname)) {
+                System.out.println("First name is: " + firstname);
+                return "Full name is: " + na;
+            }
+        }
+        return "NAME NOT FOUND";
 
     } //Should have a Return!
 

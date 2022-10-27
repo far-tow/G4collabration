@@ -1,21 +1,18 @@
 package se.lexicon;
 
-/**
- * Hello world!
- *
- */
+import static org.example.NameRepository.clear;
+import static org.example.NameRepository.findByLastName;
 public class App 
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    public static void main(String[] args) {
+        boolean blabla = clear();
+        if (blabla){
+            System.out.println("Array has been cleared!");
+        }
 
-        //System.out.println("Veronica OO");
+        String result = findByLastName("Veronica");
+        System.out.println(result);
     }
-
-    // Samuel is here
-
-    // :D Hi from Lilly <3
 
 }
 
