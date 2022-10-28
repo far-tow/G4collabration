@@ -84,18 +84,17 @@ public class NameRepository {
 
     public static String[] findByLastName(final String lastName) {
 
-        String splitNames[];
-        for (String na : names) {
-            splitNames = na.split(" ");
-            if (splitNames.length >= 2 && splitNames[1].equalsIgnoreCase(lastName)) {
-                System.out.println("Full Name: " + na);
-                return new String[] {na};
+        String newArray[] = new String[0];
+        for (String elementArray : names) {
+            String[] splitNames = elementArray.split(" ");
+            if (splitNames.length == 2 && splitNames[1].equalsIgnoreCase(lastName)) {
 
-
+                String tmp[] = Arrays.copyOf(newArray, newArray.length + 1);
+                tmp[tmp.length - 1] = elementArray;
+                newArray = tmp;
             }
         }
-        String[] back={"Name not found"};
-        return back;
+        return newArray;
     }
 
 
@@ -115,7 +114,7 @@ public class NameRepository {
 
 
     public static boolean remove(final String fullName) {
-        String[] names = {"Nive", "Farhad", "Lilly", "Sam", "Veronica"};
+
         boolean flag = false;
         int index = 0;
         for (int i = 0; i < names.length; i++) {
