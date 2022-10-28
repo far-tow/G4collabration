@@ -3,8 +3,7 @@ package se.lexicon;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class NameRepositoryTest {
 
@@ -69,5 +68,29 @@ public class NameRepositoryTest {
 
     }
 
+    @Test
+    public void test_findByLastname_return_Okoli(){
+        String[] names = {"Nivethitha Jothikumar", "Liljana Ristevska", "Veronica Okoli", "Samuel Svahn",  "Samuel Test",
+                "Farhad Towfighian"};
+        NameRepository.setNames(names);
+
+        int expectedOkoliNames = 1;
+        int actualOkoliNames = NameRepository.findByLastName("Okoli").length;
+        assertEquals(expectedOkoliNames,actualOkoliNames);
+
+
+    }
+
+    @Test
+    public void test_findByLastname_failure(){
+        String[] names = {"Nivethitha Jothikumar", "Liljana Ristevska", "Veronica Okoli", "Samuel Svahn",  "Samuel Test",
+                "Farhad Towfighian"};
+        NameRepository.setNames(names);
+
+        int expectedOkoliNames = 2;
+        int actualOkoliNames = NameRepository.findByLastName("Okoli").length;
+        assertNotEquals(expectedOkoliNames,actualOkoliNames);
+
+    }
 
 }
