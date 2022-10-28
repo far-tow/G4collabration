@@ -51,12 +51,7 @@ public class NameRepository {
     }
 
     public static String[] findAll() {
-        // String[] names = {"Samuel Svahn", "Nivethitha Jothikumar",
-        // "Liljana Ristevska", "Farhad Towfighian", "Veronica Okoli"};
-        // Arrays.sort(names, String.CASE_INSENSITIVE_ORDER);
-        // System.out.println(Arrays.toString(names));
         String[] result = Arrays.copyOf(names, names.length);
-
         return result;
     }
 
@@ -66,23 +61,16 @@ public class NameRepository {
                 return na;
         }
         return "Name not found";
-
     }
 
-
     public static boolean add(final String fullName) {
-
-
         boolean flag = true;
-
         for (String name : names) {
             if (name.equals(fullName)) {
                 flag = false;
                 System.out.println("Name found cannot add");
             }
-
         }
-
         if (flag) {
             String newArray[] = Arrays.copyOf(names, names.length + 1);
             newArray[newArray.length - 1] = fullName;
@@ -109,16 +97,17 @@ public class NameRepository {
 
 
     public static String[] findByFirstname(final String firstName) {
-        String splitNames[];
-        for (String na : names) {
-            splitNames = na.split(" ");
-            if (splitNames.length >= 2 && splitNames[0].equalsIgnoreCase(firstName)) {
-                System.out.println("First name is: " + firstName);
-                System.out.println("and full name is: " + na);
+        String newArray[] = new String[0];
+        for (String elementArray : names) {
+            String[] splitNames = elementArray.split(" ");
+            if (splitNames.length == 2 && splitNames[0].equalsIgnoreCase(firstName)) {
 
+                String tmp[] = Arrays.copyOf(newArray, newArray.length + 1);
+                tmp[tmp.length - 1] = elementArray;
+                newArray = tmp;
             }
         }
-        return new String[]{"NAME NOT FOUND"};
+        return newArray;
     }
 
 
@@ -128,13 +117,11 @@ public class NameRepository {
         int index = 0;
         for (int i = 0; i < names.length; i++) {
             if (fullName.equals(names[i])) {
-
                 flag = true;
                 index = i;
             }
         }
         if (flag) {
-
             names[index] = " ";
             System.out.println("Name removed");
         }
@@ -144,46 +131,39 @@ public class NameRepository {
             }
             System.out.println(na);
         }
-
         return true;
 
     }
 
     public static boolean update(final String original, final String updatedName) {
+        int index = 0;
+        boolean flag = false;
+        for (int i = 0; i < names.length; i++) {
+            if (names[i].equals(updatedName)) {
 
-        // step 1: find the index of the original value
-        int originalIndex = -1;
-        for (int i = 0 ; i< names.length; i++){
-            if (names[i].equalsIgnoreCase(original)){
-                originalIndex = i;
+                flag = true;
+                System.out.println("Name Cannot update");
+                return false;
             }
         }
-        System.out.println("originalIndex = " + originalIndex);
-        if (originalIndex == -1){
-            return false;
-        }
+        if (!flag) {
+            for (int i = 0; i < names.length; i++) {
+                if (names[i].equals(original)) {
 
-        // step 2: find the index of the updated value
+                    names[i] = updatedName;
+
+                    System.out.println("Updated array:" + Arrays.toString(names));
+                } else
+                    System.out.println("Name Not found to update");
 
 
-        int UpdatedIndex = -1;
-        for (int i = 0 ; i< names.length; i++){
-            if (names[i].equalsIgnoreCase(updatedName)){
-                UpdatedIndex = i;
             }
-        }
-        System.out.println("UpdatedIndex = " + UpdatedIndex);
-        if (UpdatedIndex == -1){
-            names[originalIndex]=updatedName;
-            System.out.println(Arrays.toString(names));
+
 
         }
-
-
 
 
         return true;
-
     }
 
 
