@@ -33,10 +33,12 @@ public class AppTest
      */
     public void testgetsize()
     {
-        int ExpecSize=4;
 
-        int actualSize= NameRepository.getSize();
-         assertEquals(ExpecSize,actualSize);
+    }
+
+    public void setNamesTest(String[] names)
+    {
+
 
     }
 }
