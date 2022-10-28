@@ -108,14 +108,14 @@ public class NameRepository {
     }
 
 
-    public static String [] findByFirstname(final String firstName) {
+    public static String[] findByFirstname(final String firstName) {
         String splitNames[];
         for (String na : names) {
             splitNames = na.split(" ");
             if (splitNames.length >= 2 && splitNames[0].equalsIgnoreCase(firstName)) {
                 System.out.println("First name is: " + firstName);
                 System.out.println("and full name is: " + na);
-                // return "Full name is: " + na;
+
             }
         }
         return new String[]{"NAME NOT FOUND"};
@@ -150,36 +150,40 @@ public class NameRepository {
     }
 
     public static boolean update(final String original, final String updatedName) {
-        int index = 0;
-        boolean flag = false;
-        for (int i = 0; i < names.length; i++) {
-            if (names[i].equals(updatedName)) {
 
-                flag = true;
-                System.out.println("Name Cannot update");
-                return false;
+        // step 1: find the index of the original value
+        int originalIndex = -1;
+        for (int i = 0 ; i< names.length; i++){
+            if (names[i].equalsIgnoreCase(original)){
+                originalIndex = i;
             }
         }
-        if (!flag) {
-            for (int i = 0; i < names.length; i++) {
-                if (names[i].equals(original)) {
+        System.out.println("originalIndex = " + originalIndex);
+        if (originalIndex == -1){
+            return false;
+        }
 
-                    names[i] = updatedName;
-
-                    System.out.println("Updated array:"+Arrays.toString(names));
-                }
-                else
-                    System.out.println("Name Not found to update");
+        // step 2: find the index of the updated value
 
 
-
+        int UpdatedIndex = -1;
+        for (int i = 0 ; i< names.length; i++){
+            if (names[i].equalsIgnoreCase(updatedName)){
+                UpdatedIndex = i;
             }
-
+        }
+        System.out.println("UpdatedIndex = " + UpdatedIndex);
+        if (UpdatedIndex == -1){
+            names[originalIndex]=updatedName;
+            System.out.println(Arrays.toString(names));
 
         }
+
+
 
 
         return true;
+
     }
 
 
