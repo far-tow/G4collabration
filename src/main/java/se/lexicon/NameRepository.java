@@ -2,19 +2,6 @@ package se.lexicon;
 
 
 import java.util.Arrays;
-
-/**
- * public static void clear(), public static String[] findByFirstName(final String firstName)   for farhad
- * <p>
- * <p>
- * public static String[] findAll(), public static boolean add(final String fullName) ; lilly
- * <p>
- * <p>
- * -findByLastName,  boolean remove(final String fullName) ; sam
- * <p>
- * <p>
- * find full name,    update; Nivethitha
- **/
 public class NameRepository {
 
 
