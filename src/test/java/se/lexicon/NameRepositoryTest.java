@@ -3,6 +3,8 @@ package se.lexicon;
 import org.junit.Assert;
 import org.junit.Test;
 
+import javax.naming.Name;
+
 import static org.junit.Assert.*;
 
 public class NameRepositoryTest {
@@ -89,6 +91,29 @@ public class NameRepositoryTest {
         int expectedOkoliNames = 2;
         int actualOkoliNames = NameRepository.findByLastName("Okoli").length;
         assertNotEquals(expectedOkoliNames, actualOkoliNames);
+
+    }
+    @org.junit.jupiter.api.Test
+    void AddTest(){
+        String[] names = {"Nivethitha Jothikumar", "Liljana Ristevska", "Veronica Okoli", "Samuel Svahn", "Farhad Towfighian"};
+        String[] updated={"Nivethitha Jothikumar", "Liljana Ristevska", "Veronica Okoli", "Samuel Svahn", "Farhad Towfighian","Merhdad"};
+
+        NameRepository.setNames(names);
+        NameRepository.add("Merhdad");
+        String[] Array= NameRepository.findAll();
+
+
+
+    }
+
+    @org.junit.jupiter.api.Test
+    void shouldFindAll(){
+
+        String[] names = {"Nivethitha Jothikumar", "Liljana Ristevska", "Veronica Okoli", "Samuel Svahn", "Farhad Towfighian"};
+        NameRepository.setNames(names);
+
+        String[] findall = NameRepository.findAll();
+        assertEquals(findall,names);
 
     }
 
