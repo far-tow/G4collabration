@@ -41,7 +41,8 @@ public class App {
                     System.out.println(Arrays.toString(resultFindByFN));
                     break;
                 case 8:
-                    NameRepository.findByLastName("Towfighian");
+                    String[] resultFindByLN= NameRepository.findByLastName("Towfighian");
+                    System.out.println(Arrays.toString(resultFindByLN));
                     break;
                 case 9:
                      NameRepository.update("Nivethitha", "Nivethith");
