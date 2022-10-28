@@ -33,7 +33,7 @@ public class NameRepository {
         System.out.println("Array with new names:"+NameRepository.names);*/
         String[] addNames = {"Samuel Svahn", "Nivethitha Jothikumar", "Liljana Ristevska",
                 "Farhad Towfighian", "Veronica Okoli"};
-        names = arrayConcat(names, addNames);
+        NameRepository.names = arrayConcat(NameRepository.names, names);
 
     }
 
@@ -154,20 +154,26 @@ public class NameRepository {
         boolean flag = false;
         for (int i = 0; i < names.length; i++) {
             if (names[i].equals(updatedName)) {
-                index = i;
+
                 flag = true;
+                return false;
             }
         }
         if (!flag) {
+            for (int i = 0; i < names.length; i++) {
+                if (names[i].equals(original)) {
 
-            names = Arrays.copyOf(names, names.length + 1);
-            names[names.length - 1] = updatedName;
-            System.out.println("Updated array");
-            System.out.println(Arrays.toString(names));
-        }
+                    names[i] = updatedName;
+                    System.out.println("Updated array");
+                    System.out.println(Arrays.toString(names));
+                }
 
 
-        return false;
+
+        }}
+
+
+        return true;
     }
 
 
