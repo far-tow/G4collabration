@@ -94,17 +94,20 @@ public class NameRepository {
         return false;
     }
 
-    public static String findByLastName(final String lastName) {
+    public static String[] findByLastName(final String lastName) {
 
         String splitNames[];
         for (String na : names) {
             splitNames = na.split(" ");
             if (splitNames.length >= 2 && splitNames[1].equalsIgnoreCase(lastName)) {
                 System.out.println("Full Name: " + na);
-                return na;
+                return new String[] {na};
+
+
             }
         }
-        return "NAME NOT FOUND";
+        String[] back={"Name not found"};
+        return back;
     }
 
 
