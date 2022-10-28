@@ -18,8 +18,7 @@ public class NameRepositoryTest {
         int expectedSamuelNames = 2;
         int actualSamuelNames = NameRepository.findByFirstname("Samuel").length;
         assertEquals(expectedSamuelNames, actualSamuelNames);
-        // Assert.assertEquals(expectedName,actualName);
-        //Assert.assertEquals(expectedName,expectedName);
+
 
     }
 
@@ -33,8 +32,7 @@ public class NameRepositoryTest {
         int expectedSamuelNames = 5;
         int actualSamuelNames = NameRepository.findByFirstname("Samuel").length;
         Assert.assertNotEquals(expectedSamuelNames, actualSamuelNames);
-        // Assert.assertEquals(expectedName,actualName);
-        //Assert.assertEquals(expectedName,expectedName);
+
 
     }
 

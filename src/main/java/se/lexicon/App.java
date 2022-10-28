@@ -59,10 +59,10 @@ public class App {
             }
 
 
-        } // while
+        }
 
 
-    } // main
+    }
 
 
     public static void printMenu() {

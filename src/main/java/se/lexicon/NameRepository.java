@@ -18,7 +18,6 @@ import java.util.Arrays;
 public class NameRepository {
 
 
-
     private static String names[] = new String[0];
 
     public static int getSize() {
