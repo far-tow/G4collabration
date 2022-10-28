@@ -127,9 +127,9 @@ public class NameRepositoryTest {
                 "Farhad Towfighian"};
         NameRepository.setNames(names);
 
-        boolean expectedOkoliNames = false;
-        boolean actualOkoliNames = NameRepository.remove("Erik Svensson");
-        assertNotEquals(expectedOkoliNames, actualOkoliNames);
+        boolean expectedNames = false;
+        boolean actualNames = NameRepository.remove("Erik Svensson");
+        assertNotEquals(expectedNames, actualNames);
 
 
     }
