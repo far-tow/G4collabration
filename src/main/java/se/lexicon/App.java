@@ -18,7 +18,7 @@ public class App {
                     System.out.println("len = " + len);
                     break;
                 case 2:
-                    String[] names = {"Nivethitha Jothikumar", "Liljana Ristevska", "Veronica Okoli", "Samuel Svahn",
+                    String[] names = {"Nivethitha Jothikumar", "Liljana Ristevska", "Veronica Okoli", "Samuel Svahn", "Samuel Test",
                             "Farhad Towfighian"};
                     NameRepository.setNames(names);
                     break;
@@ -37,7 +37,8 @@ public class App {
                     NameRepository.add("Mehardad javan");
                     break;
                 case 7:
-                    NameRepository.findByFirstname("Samuel");
+                   String[] resultFindByFN = NameRepository.findByFirstname("Samuel");
+                    System.out.println(Arrays.toString(resultFindByFN));
                     break;
                 case 8:
                     NameRepository.findByLastName("Towfighian");
