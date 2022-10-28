@@ -26,11 +26,12 @@ public class App {
                     NameRepository.clear();
                     break;
                 case 4:
-                   String[] values= NameRepository.findAll();
-                    System.out.println(Arrays.toString(values));
+                    String [] Array1 = NameRepository.findAll();
+                    System.out.println("new array:" + Arrays.toString(Array1));
                     break;
                 case 5:
-                    NameRepository.find("Veronica Okoli");
+                    String Value= NameRepository.find("Veronica Okoli");
+                    System.out.println(Value);
                     break;
                 case 6:
                     NameRepository.add("Mehardad javan");
@@ -42,7 +43,7 @@ public class App {
                     NameRepository.findByLastName("Towfighian");
                     break;
                 case 9:
-                    NameRepository.update("Farhad Towfighian", "Farhad T");
+                    NameRepository.update("Nivethitha Jothikumar", "Nivethitha Jayanth");
                     break;
                 case 10:
                     NameRepository.remove("Nivethitha Jothikumar");
@@ -63,12 +64,8 @@ public class App {
 
 
     public static void printMenu() {
-        System.out.println("##### Group45(Team 4) collabration workshop #####");
-        System.out.print("\t1.To Get Size of Array,2.Set Names in array,3.Clear the array,4.Find all in array," + "\n\t" +
-                "5.Fin value in array,6.Add value in Array,7.Find value by First Name,8.Find value by Last Name," + "\n\t" +
-                "9.Update value in array ,10.Remove value from Array, 0. To Exit");
-
-
+        System.out.println("##### Group collabration workshop #####");
+        System.out.print("\tOption (1-10): ");
     }
 
     public static int getInputNumber() {

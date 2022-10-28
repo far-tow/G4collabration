@@ -31,8 +31,8 @@ public class NameRepository {
 
     public static void setNames(String[] names) {   /* NameRepository.names=Arrays.copyOf(names,names.length);
         System.out.println("Array with new names:"+NameRepository.names);*/
-        String[] addNames = {"Samuel Svahn", "Nivethitha Jothikumar", "Liljana Ristevska",
-                "Farhad Towfighian", "Veronica Okoli"};
+        /*String[] addNames = {"Samuel Svahn", "Nivethitha Jothikumar", "Liljana Ristevska",
+                "Farhad Towfighian", "Veronica Okoli"};*/
         NameRepository.names = arrayConcat(NameRepository.names, names);
 
     }
@@ -108,17 +108,17 @@ public class NameRepository {
     }
 
 
-    public static String findByFirstname(final String firstName) {
+    public static String [] findByFirstname(final String firstName) {
         String splitNames[];
         for (String na : names) {
             splitNames = na.split(" ");
             if (splitNames.length >= 2 && splitNames[0].equalsIgnoreCase(firstName)) {
                 System.out.println("First name is: " + firstName);
-                return "Full name is: " + na;
+                System.out.println("and full name is: " + na);
+                // return "Full name is: " + na;
             }
         }
-        return "NAME NOT FOUND";
-
+        return new String[]{"NAME NOT FOUND"};
     }
 
 
@@ -154,26 +154,20 @@ public class NameRepository {
         boolean flag = false;
         for (int i = 0; i < names.length; i++) {
             if (names[i].equals(updatedName)) {
-
+                index = i;
                 flag = true;
-                return false;
             }
         }
         if (!flag) {
-            for (int i = 0; i < names.length; i++) {
-                if (names[i].equals(original)) {
 
-                    names[i] = updatedName;
-                    System.out.println("Updated array");
-                    System.out.println(Arrays.toString(names));
-                }
-
+            names = Arrays.copyOf(names, names.length + 1);
+            names[names.length - 1] = updatedName;
+            System.out.println("Updated array");
+            System.out.println(Arrays.toString(names));
+        }
 
 
-        }}
-
-
-        return true;
+        return false;
     }
 
 
