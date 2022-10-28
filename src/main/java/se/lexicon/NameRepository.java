@@ -18,6 +18,7 @@ import java.util.Arrays;
 public class NameRepository {
 
 
+
     private static String names[] = new String[0];
 
     public static int getSize() {
@@ -132,35 +133,34 @@ public class NameRepository {
     }
 
     public static boolean update(final String original, final String updatedName) {
-        int originalIndex = -1;
+        int index = 0;
+        boolean flag = false;
         for (int i = 0; i < names.length; i++) {
-            if (names[i].equalsIgnoreCase(original)) {
-                originalIndex = i;
+            if (names[i].equals(updatedName)) {
+
+                flag = true;
+                System.out.println("Name Cannot update");
+                return false;
             }
         }
-        System.out.println("originalIndex = " + originalIndex);
-        if (originalIndex == -1) {
-            return false;
-        }
+        if (!flag) {
+            for (int i = 0; i < names.length; i++) {
+                if (names[i].equals(original)) {
 
-        // step 2: find the index of the updated value
+                    names[i] = updatedName;
+
+                    System.out.println("Updated array:" + Arrays.toString(names));
+                } else
+                    System.out.println("Name Not found to update");
 
 
-        int UpdatedIndex = -1;
-        for (int i = 0; i < names.length; i++) {
-            if (names[i].equalsIgnoreCase(updatedName)) {
-                UpdatedIndex = i;
             }
-        }
-        System.out.println("UpdatedIndex = " + UpdatedIndex);
-        if (UpdatedIndex == -1) {
-            names[originalIndex] = updatedName;
-            System.out.println(Arrays.toString(names));
+
 
         }
+
 
         return true;
-
     }
 
 

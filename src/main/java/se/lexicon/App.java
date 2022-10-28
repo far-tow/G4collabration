@@ -45,7 +45,7 @@ public class App {
                     System.out.println(Arrays.toString(resultFindByLN));
                     break;
                 case 9:
-                     NameRepository.update("Nivethitha Jothikumar", "Nivethitha Jayanth");
+                     NameRepository.update("Nivethitha", "Nivethith");
                     break;
                 case 10:
                     NameRepository.remove("Nivethitha Jothikumar");
