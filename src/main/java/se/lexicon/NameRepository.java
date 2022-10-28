@@ -97,17 +97,17 @@ public class NameRepository {
 
 
     public static String[] findByFirstname(final String firstName) {
-        String splitNames[];
-        for (String na : names) {
-            splitNames = na.split(" ");
-            if (splitNames.length >= 2 && splitNames[0].equalsIgnoreCase(firstName)) {
+        String newArray[] = new String[0];
+        for (String elementArray : names) {
+            String[] splitNames = elementArray.split(" ");
+            if (splitNames.length == 2 && splitNames[0].equalsIgnoreCase(firstName)) {
 
-                System.out.println("First name is: " + firstName);
-                System.out.println("and full name is: " + na);
-                // return "Full name is: " + na;
+                String tmp[] = Arrays.copyOf(newArray, newArray.length + 1);
+                tmp[tmp.length - 1] = elementArray;
+                newArray = tmp;
             }
         }
-        return new String[]{"NAME NOT FOUND"};
+        return newArray;
     }
 
 
@@ -152,11 +152,9 @@ public class NameRepository {
 
                     names[i] = updatedName;
 
-                    System.out.println("Updated array:"+Arrays.toString(names));
-                }
-                else
+                    System.out.println("Updated array:" + Arrays.toString(names));
+                } else
                     System.out.println("Name Not found to update");
-
 
 
             }
