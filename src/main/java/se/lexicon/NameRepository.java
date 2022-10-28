@@ -51,12 +51,7 @@ public class NameRepository {
     }
 
     public static String[] findAll() {
-        // String[] names = {"Samuel Svahn", "Nivethitha Jothikumar",
-        // "Liljana Ristevska", "Farhad Towfighian", "Veronica Okoli"};
-        // Arrays.sort(names, String.CASE_INSENSITIVE_ORDER);
-        // System.out.println(Arrays.toString(names));
         String[] result = Arrays.copyOf(names, names.length);
-
         return result;
     }
 
@@ -66,23 +61,16 @@ public class NameRepository {
                 return na;
         }
         return "Name not found";
-
     }
 
-
     public static boolean add(final String fullName) {
-
-
         boolean flag = true;
-
         for (String name : names) {
             if (name.equals(fullName)) {
                 flag = false;
                 System.out.println("Name found cannot add");
             }
-
         }
-
         if (flag) {
             String newArray[] = Arrays.copyOf(names, names.length + 1);
             newArray[newArray.length - 1] = fullName;
@@ -108,11 +96,12 @@ public class NameRepository {
     }
 
 
-    public static String [] findByFirstname(final String firstName) {
+    public static String[] findByFirstname(final String firstName) {
         String splitNames[];
         for (String na : names) {
             splitNames = na.split(" ");
             if (splitNames.length >= 2 && splitNames[0].equalsIgnoreCase(firstName)) {
+
                 System.out.println("First name is: " + firstName);
                 System.out.println("and full name is: " + na);
                 // return "Full name is: " + na;
@@ -128,13 +117,11 @@ public class NameRepository {
         int index = 0;
         for (int i = 0; i < names.length; i++) {
             if (fullName.equals(names[i])) {
-
                 flag = true;
                 index = i;
             }
         }
         if (flag) {
-
             names[index] = " ";
             System.out.println("Name removed");
         }
@@ -144,7 +131,6 @@ public class NameRepository {
             }
             System.out.println(na);
         }
-
         return true;
 
     }
