@@ -18,9 +18,7 @@ import java.util.Arrays;
 public class NameRepository {
 
 
-    /* Veronica
-    Inside NameRepository create a private static empty array of String called names.
-    SUGGESTIONS:  */
+
     private static String names[] = new String[0];
 
     public static int getSize() {
@@ -29,10 +27,7 @@ public class NameRepository {
         return len;
     }
 
-    public static void setNames(String[] names) {   /* NameRepository.names=Arrays.copyOf(names,names.length);
-        System.out.println("Array with new names:"+NameRepository.names);*/
-        /*String[] addNames = {"Samuel Svahn", "Nivethitha Jothikumar", "Liljana Ristevska",
-                "Farhad Towfighian", "Veronica Okoli"};*/
+    public static void setNames(String[] names) {
         NameRepository.names = arrayConcat(NameRepository.names, names);
 
     }
@@ -82,17 +77,19 @@ public class NameRepository {
         return false;
     }
 
-    public static String findByLastName(final String lastName) {
+    public static String[] findByLastName(final String lastName) {
 
-        String splitNames[];
-        for (String na : names) {
-            splitNames = na.split(" ");
-            if (splitNames.length >= 2 && splitNames[1].equalsIgnoreCase(lastName)) {
-                System.out.println("Full Name: " + na);
-                return na;
+        String newArray[] = new String[0];
+        for (String elementArray : names) {
+            String[] splitNames = elementArray.split(" ");
+            if (splitNames.length == 2 && splitNames[1].equalsIgnoreCase(lastName)) {
+
+                String tmp[] = Arrays.copyOf(newArray, newArray.length + 1);
+                tmp[tmp.length - 1] = elementArray;
+                newArray = tmp;
             }
         }
-        return "NAME NOT FOUND";
+        return newArray;
     }
 
 
@@ -112,7 +109,7 @@ public class NameRepository {
 
 
     public static boolean remove(final String fullName) {
-        String[] names = {"Nive", "Farhad", "Lilly", "Sam", "Veronica"};
+
         boolean flag = false;
         int index = 0;
         for (int i = 0; i < names.length; i++) {
