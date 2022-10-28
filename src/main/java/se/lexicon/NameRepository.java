@@ -18,9 +18,7 @@ import java.util.Arrays;
 public class NameRepository {
 
 
-    /* Veronica
-    Inside NameRepository create a private static empty array of String called names.
-    SUGGESTIONS:  */
+
     private static String names[] = new String[0];
 
     public static int getSize() {
@@ -29,10 +27,7 @@ public class NameRepository {
         return len;
     }
 
-    public static void setNames(String[] names) {   /* NameRepository.names=Arrays.copyOf(names,names.length);
-        System.out.println("Array with new names:"+NameRepository.names);*/
-        /*String[] addNames = {"Samuel Svahn", "Nivethitha Jothikumar", "Liljana Ristevska",
-                "Farhad Towfighian", "Veronica Okoli"};*/
+    public static void setNames(String[] names) {
         NameRepository.names = arrayConcat(NameRepository.names, names);
 
     }
