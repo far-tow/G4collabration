@@ -140,20 +140,32 @@ public class NameRepository {
         boolean flag = false;
         for (int i = 0; i < names.length; i++) {
             if (names[i].equals(updatedName)) {
-                index = i;
+
                 flag = true;
+                System.out.println("Name Cannot update");
+                return false;
             }
         }
         if (!flag) {
+            for (int i = 0; i < names.length; i++) {
+                if (names[i].equals(original)) {
 
-            names = Arrays.copyOf(names, names.length + 1);
-            names[names.length - 1] = updatedName;
-            System.out.println("Updated array");
-            System.out.println(Arrays.toString(names));
+                    names[i] = updatedName;
+
+                    System.out.println("Updated array:"+Arrays.toString(names));
+                }
+                else
+                    System.out.println("Name Not found to update");
+
+
+
+            }
+
+
         }
 
 
-        return false;
+        return true;
     }
 
 
