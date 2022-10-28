@@ -66,14 +66,21 @@ public class App {
 
 
     public static void printMenu() {
-        System.out.println("##### Group45(Team 4) collabration workshop #####");
-        System.out.print("\t1.To Get Size of Array,2.Set Names in array,3.Clear the array,4.Find all in array," + "\n\t" +
-                "5.Fin value in array,6.Add value in Array,7.Find value by First Name,8.Find value by Last Name," + "\n\t" +
-                "9.Update value in array ,10.Remove value from Array, 0. To Exit");
-    }
+        System.out.println("Group45(Team 4) collabration workshop");
+        System.out.println("\t\t\tMembers");
+        System.out.println("Nive, Sam, Farhad, Veronica, Lilly");
+        System.out.println("                          ");
+        String[] options = {"\t1. To Get Size of Array", "\t2. Set Names in array", "\t3. Clear the array", "\t4. Find all in array", "\t5. Find value in array", "\t6. Add value in Array",
+                "\t7. Find value by First Name", "\t8. Find value by Last Name", "\t9. Update value in array", "\t10. Remove value from Array", "\t0. To Exit"};
 
+        for (String opt : options) {
+            System.out.println(opt);
+        }
+
+    }
     public static int getInputNumber() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("\tEnter your method:");
         int number = 0;
         try {
             number = scanner.nextInt();
