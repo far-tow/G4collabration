@@ -1,7 +1,7 @@
 # G4collabration
 
 Members:
-- Samuel
+- Samuel skksk
 - Nivethitha
 - Liljana
 - Farhad
