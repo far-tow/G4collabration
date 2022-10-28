@@ -117,21 +117,7 @@ public class NameRepositoryTest {
 
     }
 
-    public void test_removeTest() {
-        String[] names = {"Nivethitha Jothikumar", "Liljana Ristevska", "Veronica Okoli", "Samuel Svahn", "Samuel Test",
-                "Farhad Towfighian"};
-        NameRepository.setNames(names);
 
-        boolean value = NameRepository.remove("Nivethitha Jothikumar");
-        assertTrue(value);
-
-        int expectedName = 0;
-        int actualName = 0;
-
-        assertEquals(expectedName, actualName);
-
-
-    }
     @Test
     public void test_Remove_Test(){
 
